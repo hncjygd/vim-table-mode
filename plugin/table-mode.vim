@@ -54,7 +54,7 @@ call s:SetGlobalOptDefault('table_mode_add_formula_map', g:table_mode_map_prefix
 call s:SetGlobalOptDefault('table_mode_eval_formula_map', g:table_mode_map_prefix.'fe')
 call s:SetGlobalOptDefault('table_mode_echo_cell_map', g:table_mode_map_prefix.'?')
 call s:SetGlobalOptDefault('table_mode_sort_map', g:table_mode_map_prefix.'s')
-call s:SetGlobalOptDefault('table_mode_tableize_map', g:table_mode_map_prefix.'t')
+call s:SetGlobalOptDefault('table_mode_tableize_map', g:table_mode_map_prefix.'s')
 call s:SetGlobalOptDefault('table_mode_tableize_d_map', '<Leader>T')
 
 call s:SetGlobalOptDefault('table_mode_syntax', 1)
@@ -110,11 +110,11 @@ nnoremap <silent> <Plug>(table-mode-echo-cell) :call tablemode#spreadsheet#EchoC
 
 nnoremap <silent> <Plug>(table-mode-sort) :call tablemode#spreadsheet#Sort('')<CR>
 
-"if !g:table_mode_disable_tableize_mappings
-"  if !hasmapto('<Plug>(table-mode-tableize)')
-"    exec "nmap" g:table_mode_tableize_map "<Plug>(table-mode-tableize)"
-"    exec "xmap" g:table_mode_tableize_map "<Plug>(table-mode-tableize)"
-"  endif
+if !g:table_mode_disable_tableize_mappings
+  if !hasmapto('<Plug>(table-mode-tableize)')
+    exec "nmap" g:table_mode_tableize_map "<Plug>(table-mode-tableize)"
+    exec "xmap" g:table_mode_tableize_map "<Plug>(table-mode-tableize)"
+  endif
 
   if !hasmapto('<Plug>(table-mode-tableize-delimiter)')
     exec "xmap" g:table_mode_tableize_d_map "<Plug>(table-mode-tableize-delimiter)"
