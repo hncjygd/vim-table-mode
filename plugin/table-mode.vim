@@ -110,11 +110,11 @@ nnoremap <silent> <Plug>(table-mode-echo-cell) :call tablemode#spreadsheet#EchoC
 
 nnoremap <silent> <Plug>(table-mode-sort) :call tablemode#spreadsheet#Sort('')<CR>
 
-if !g:table_mode_disable_tableize_mappings
-  if !hasmapto('<Plug>(table-mode-tableize)')
-    exec "nmap" g:table_mode_tableize_map "<Plug>(table-mode-tableize)"
-    exec "xmap" g:table_mode_tableize_map "<Plug>(table-mode-tableize)"
-  endif
+"if !g:table_mode_disable_tableize_mappings
+"  if !hasmapto('<Plug>(table-mode-tableize)')
+"    exec "nmap" g:table_mode_tableize_map "<Plug>(table-mode-tableize)"
+"    exec "xmap" g:table_mode_tableize_map "<Plug>(table-mode-tableize)"
+"  endif
 
   if !hasmapto('<Plug>(table-mode-tableize-delimiter)')
     exec "xmap" g:table_mode_tableize_d_map "<Plug>(table-mode-tableize-delimiter)"
